@@ -1,8 +1,8 @@
 [versions]
 
-awssdk = "2.16.90"
-log4j = "2.14.1"
-netty = "4.1.65.Final"
+awssdk = "2.28.17"
+log4j = "2.24.1"
+netty = "4.1.114.Final"
 
 [libraries]
 
@@ -10,7 +10,7 @@ awssdk-auth = { module = "software.amazon.awssdk:auth", version.ref = "awssdk" }
 awssdk-codeartifact = { module = "software.amazon.awssdk:codeartifact", version.ref = "awssdk" }
 awssdk-regions = { module = "software.amazon.awssdk:regions", version.ref = "awssdk" }
 
-caffeine = { module = "com.github.ben-manes.caffeine:caffeine", version = "3.0.2" }
+caffeine = { module = "com.github.ben-manes.caffeine:caffeine", version = "3.1.8" }
 
 joptsimple = { module = "net.sf.jopt-simple:jopt-simple", version = "5.0.4" }
 
@@ -22,7 +22,7 @@ netty-codec-http = { module = "io.netty:netty-codec-http", version.ref = "netty"
 netty-handler = { module = "io.netty:netty-handler", version.ref = "netty" }
 netty-transport = { module = "io.netty:netty-transport", version.ref = "netty" }
 
-slf4j-api = { module = "org.slf4j:slf4j-api", version = "1.7.30" }
+slf4j-api = { module = "org.slf4j:slf4j-api", version = "2.0.16" }
 
 [bundles]
 

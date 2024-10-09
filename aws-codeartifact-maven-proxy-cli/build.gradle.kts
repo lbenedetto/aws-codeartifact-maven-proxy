@@ -1,7 +1,7 @@
 plugins {
     application
     kotlin("jvm")
-    id("com.google.cloud.tools.jib") version "3.1.1"
+    id("com.google.cloud.tools.jib") version "3.4.3"
 }
 
 
@@ -33,7 +33,7 @@ tasks.named<Tar>("distTar") {
 
 jib {
     from {
-        image = "adoptopenjdk:11.0.11_9-jre-openj9-0.26.0-focal"
+        image = "eclipse-temurin:11.0.24_8-jre-focal"
     }
     to {
         image = "unbroken-dome/aws-codeartifact-maven-proxy"

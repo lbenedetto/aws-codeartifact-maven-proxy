@@ -21,8 +21,6 @@ dependencyResolutionManagement {
     }
 }
 
-enableFeaturePreview("VERSION_CATALOGS")
-
 include(
     "aws-codeartifact-maven-proxy",
     "aws-codeartifact-maven-proxy-cli"

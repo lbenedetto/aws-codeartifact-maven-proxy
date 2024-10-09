@@ -1,7 +1,9 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     kotlin("jvm") apply false
-    id("org.jetbrains.dokka") version "1.4.32" apply false
-    id("io.github.gradle-nexus.publish-plugin") version "1.1.0"
+    id("org.jetbrains.dokka") version "1.9.20" apply false
+    id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
 }
 
 
@@ -9,14 +11,16 @@ subprojects {
 
     plugins.withType<JavaPlugin> {
         configure<JavaPluginExtension> {
-            sourceCompatibility = JavaVersion.VERSION_1_8
-            targetCompatibility = JavaVersion.VERSION_1_8
+            sourceCompatibility = JavaVersion.VERSION_11
+            targetCompatibility = JavaVersion.VERSION_11
         }
     }
 
     plugins.withId("org.jetbrains.kotlin.jvm") {
         tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-            kotlinOptions.jvmTarget = "1.8"
+            compilerOptions {
+                jvmTarget.set(JvmTarget.JVM_11)
+            }
         }
 
         dependencies {
@@ -31,7 +35,7 @@ subprojects {
     plugins.withId("org.jetbrains.dokka") {
 
         dependencies {
-            "dokkaJavadocPlugin"("org.jetbrains.dokka:kotlin-as-java-plugin:1.4.32")
+            "dokkaJavadocPlugin"("org.jetbrains.dokka:kotlin-as-java-plugin:1.9.20")
         }
 
         tasks.withType<Jar>().matching { it.name == "javadocJar" }
